@@ -15,32 +15,42 @@ const backgroundColor = computed(() => {
 </script>
 
 <template>
-  <div class="cardContainer">
+  <a :href="`/pokemon/${pokemon.name}`" class="cardContainer">
     <p class="cardId">{{`#${pokemon.id}`}}</p>
     <img
       class="cardSprite"
       alt="A pokemon sprite"
-      :src="props.pokemon.sprites.front_default"
+      :src="pokemon.sprites.front_default"
     />
-    <p class="cardName">{{ props.pokemon.name }}</p>
+    <p class="cardName">{{ pokemon.name }}</p>
     <div class="cardIconContainer">
-      <img v-for="type in props.pokemon.types"
+      <img v-for="type in pokemon.types"
         class="cardTypeIcon" 
         :alt="`Pokemon type: ${type.type.name}`"
         :src="`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${type.type.name}.svg`" 
         :style="{ 'background-color': getTypeColor(type.type.name) }"
       />
     </div>
-  </div>
+  </a>
 </template>
 
+
 <style scoped>
+
+p, .cardContainer {
+  text-decoration: none;
+  color: black;
+}
+
 .cardContainer {
+  display: block;
   width: min-content;
   padding-top: 10px;
   padding-bottom: 10px;
   
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  margin: auto;
 
 }
 
