@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "pokeapi-js-wrapper": "^1.2.2",
-    "vue": "^3.2.41",
+    "vue": "^3.2.44",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
