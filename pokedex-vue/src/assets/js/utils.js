@@ -1,4 +1,8 @@
+import { Pokedex } from "pokeapi-js-wrapper"
 
+/** Unique pokedex instance, no need to have more than one to wrap around the API */
+export const pokedexInstance = new Pokedex({cacheImages: true});
+console.log(pokedexInstance)
 
 /**
  * Get a color associated to a pokemon type
