@@ -1,0 +1,20 @@
+/** Styles reused across the project */
+
+/* Represent a simple badge (eg. class/evolution badge) */
+.badge {
+  width: min-content;
+  height: min-content;
+  min-height: 2rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 1.25rem;
+}
+
+.circle {
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+
+}
+
