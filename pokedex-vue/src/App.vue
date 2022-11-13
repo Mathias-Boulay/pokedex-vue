@@ -5,17 +5,21 @@ import { RouterView } from "vue-router";
 
 <template>
   <header>
-    <a href="/">
-      <img
+    <router-link to="/">
+      <img class="logo"
         src="./assets/img/pokedex_title.png"
         alt="Header icon"
       />
-    </a>
+    </router-link>
     
   </header>
 
   <div id="main">
-    <RouterView />
+    <!-- Not the best use of such tag,
+    but most components rely of the same data fetched by the view -->
+    <Suspense>  
+      <RouterView />
+    </Suspense>
   </div>
 
   <footer>
@@ -32,6 +36,11 @@ header {
   background-color: red;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
 }
 
 footer {
