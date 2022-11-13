@@ -15,7 +15,7 @@ const backgroundColor = computed(() => {
 </script>
 
 <template>
-  <a :href="`/pokemon/${pokemon.name}`" class="cardContainer">
+  <router-link :to="`/pokemon/${pokemon.name}`" class="cardContainer">
     <p class="cardId">{{`#${pokemon.id}`}}</p>
     <img
       class="cardSprite"
@@ -31,7 +31,7 @@ const backgroundColor = computed(() => {
         :style="{ 'background-color': getTypeColor(type.type.name) }"
       />
     </div>
-  </a>
+  </router-link>
 </template>
 
 
