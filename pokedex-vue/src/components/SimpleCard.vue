@@ -1,10 +1,15 @@
 <script setup>
 import { ref, computed } from "vue";
 import { getTypeColor } from "../assets/js/utils.js";
+import TypeIconListVue from "./TypeIconList.vue";
 
 
 const props = defineProps({
   pokemon: Object,
+});
+
+const typeNames = computed(() => {
+  return props.pokemon.types.map((typeInstance) => typeInstance.type.name);
 });
 
 const backgroundColor = computed(() => {
@@ -23,14 +28,7 @@ const backgroundColor = computed(() => {
       :src="pokemon.sprites.front_default"
     />
     <p class="cardName">{{ pokemon.name }}</p>
-    <div class="cardIconContainer">
-      <img v-for="type in pokemon.types"
-        class="cardTypeIcon" 
-        :alt="`Pokemon type: ${type.type.name}`"
-        :src="`https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${type.type.name}.svg`" 
-        :style="{ 'background-color': getTypeColor(type.type.name) }"
-      />
-    </div>
+    <TypeIconListVue :type-names="typeNames" />
   </router-link>
 </template>
 
@@ -81,17 +79,5 @@ p, .cardContainer {
   text-transform: capitalize;
 }
 
-.cardIconContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-}
-
-.cardTypeIcon{
-  width: 20%;
-  border-radius: 100%;
-  padding: 4%
-}
 
 </style>
