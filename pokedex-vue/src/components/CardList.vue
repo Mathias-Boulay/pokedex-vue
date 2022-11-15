@@ -1,28 +1,31 @@
 <script setup>
-  import { pokedexInstance } from '../assets/js/utils.js'
-  import SimpleCardVue from './SimpleCard.vue';
-  
-  import 'vue-virtual-scroller/dist/vue-virtual-scroller.css' 
-  import { RecycleScroller } from 'vue-virtual-scroller';
+import { pokedexInstance } from '../assets/js/utils.js'
+import SimpleCardVue from './SimpleCard.vue';
 
-  // FIXME Presence of magic number
-  const pokemonIds = new Array(50);
-  for(let i of pokemonIds.keys()){
-    pokemonIds[i] = i+1;
-  }
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css' 
+import { RecycleScroller } from 'vue-virtual-scroller';
 
-  const pokemons = await pokedexInstance.getPokemonByName(pokemonIds);
+// FIXME Presence of magic number
+const pokemonIds = new Array(50);
+for(let i of pokemonIds.keys()){
+  pokemonIds[i] = i+1;
+}
+
+const pokemons = await pokedexInstance.getPokemonByName(pokemonIds);
+
+
 
 </script>
 
 <template>
   <div class="cardList">
     <RecycleScroller
+      style="height: 70vh; overflow-y:auto;"
       class="scroller"
       :items="pokemons"
-      :item-size="250"
-      :gridItems="3"
-      :pool="20"
+      :item-size="260"
+      :gridItems="4"
+      
       v-slot="{item, index, active}"
     >
       <SimpleCardVue :pokemon="item" />
@@ -35,5 +38,6 @@
 .scroller{
   height: 100%;
 }
+
 
 </style>
