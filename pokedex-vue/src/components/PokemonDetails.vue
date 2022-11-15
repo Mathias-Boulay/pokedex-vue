@@ -47,6 +47,7 @@ const props = defineProps({
   justify-content: space-around;
   padding-left: 2rem;
   padding-right: 2rem;
+  gap: 1.25rem
 
 }
 
