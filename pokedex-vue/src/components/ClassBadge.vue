@@ -24,11 +24,6 @@ const props = defineProps({
   overflow: hidden;
 } */
 
-p {
-  text-align: center;
-  padding: 0.5rem 1rem;
-  margin: 0;
-}
 .mythicalPokemon {
   background-color: blueviolet;
 }
