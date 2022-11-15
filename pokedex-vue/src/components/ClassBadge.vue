@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="pokemonClass badge">
+  <div class="badge pokemonClass">
     <p class="legendaryPokemon" v-if="pokemonSpecie.is_mythical">Legendary Pokemon</p>
     <p class="mythicalPokemon" v-if="pokemonSpecie.is_legendary">Mythical Pokemon</p>
     <p class="babyPokemon" v-if="pokemonSpecie.is_mythical">Baby Pokemon</p>
