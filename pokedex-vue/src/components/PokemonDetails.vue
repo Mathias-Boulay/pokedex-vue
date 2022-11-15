@@ -12,11 +12,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="pokemonDetails">
+  <div class="card pokemonDetails">
     <h3>Details</h3>
-    <div>
-      <p>Height: <span>{{ pokemon.height }}</span></p>
-      <p>Weigth: <span> {{ pokemon.weight }}</span></p>
+    <div class="detailContainer">
+      <p>Height: <span>{{ pokemon.height * 10 }} cm</span></p>
+      <p>Weigth: <span> {{ pokemon.weight * 10 }} g</span></p>
       <p>Gender:
         <span v-if="pokemonSpecie.gender_rate === -1">Unknown</span>
         <span v-else-if="pokemonSpecie.gender_rate === 0">Male</span>
@@ -39,9 +39,15 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+}
 
-  background-color: aquamarine;
-  border-radius: 15px ;
+.detailContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
 }
 
 </style>
