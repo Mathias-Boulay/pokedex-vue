@@ -59,7 +59,7 @@ p, .cardContainer {
   display: block;
   
   background-color: v-bind("backgroundColor");
-  border: dashed black;
+  border: solid black;
   clip-path: polygon(
     30% 0%,
     70% 0%,
