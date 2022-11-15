@@ -13,7 +13,12 @@
     label: {
       type: String,
       required: true
-    }, 
+    },
+    
+    color: {
+      type: String,
+      default: '#F00'
+    }
 
   });
 </script>
@@ -30,9 +35,20 @@
 
 .statBar{
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: left;
+  
+}
+
+
+progress {
+  appearance: none;
+  width: 100%; 
+  height: 1.5rem; 
+}
+
+::-moz-progress-bar, ::-webkit-progress-bar {
+  background-color: v-bind(color);
 }
 
 </style>
