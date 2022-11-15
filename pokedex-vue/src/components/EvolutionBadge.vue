@@ -5,7 +5,7 @@ import { computed } from '@vue/reactivity';
 const props = defineProps(['pokemon']);
 
 const backgroundColor = computed(() => {
-  return (getTypeColor(props.pokemon.types[0].type.name) ?? '#000');
+  return (props.pokemon ? getTypeColor(props.pokemon.types[0].type.name) : '#000');
 });
 </script>
 
