@@ -57,7 +57,7 @@ function processDescription(description){
 p {
   text-align: center;
   min-width: min-content;
-  width: 40rem;
+  max-width: 40rem;
 }
 
 .pokemonDescription {
