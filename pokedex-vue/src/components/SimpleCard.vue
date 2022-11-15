@@ -20,7 +20,7 @@ const backgroundColor = computed(() => {
 </script>
 
 <template>
-  <router-link :to="`/pokemon/${pokemon.name}`" class="cardContainer">
+  <router-link :to="`/pokemon/${pokemon.name}`" class="cardContainer card">
     <p class="cardId">{{`#${pokemon.id}`}}</p>
     <img
       class="cardSprite"
@@ -43,10 +43,8 @@ p, .cardContainer {
 .cardContainer {
   display: block;
   width: min-content;
-  padding-top: 10px;
-  padding-bottom: 10px;
   
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  
 
   margin: auto;
 
@@ -57,7 +55,7 @@ p, .cardContainer {
 }
 
 .cardSprite {
-  margin: 0px 4vw;
+  margin: 0px 2.5rem;
   display: block;
   
   background-color: v-bind("backgroundColor");
