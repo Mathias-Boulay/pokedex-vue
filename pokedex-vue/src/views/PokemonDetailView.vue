@@ -24,16 +24,24 @@ const types = await Promise.all(currentPokemon.types.map(async typeInstance => a
 </script>
 
 <template>
-  <p> {{ $route.params.name}} - {{ param }} </p>
-  <ClassBadgeVue :pokemon-specie="currentPokemonSpecie" />
-  <EvolutionBadgeVue :pokemon="previousPokemon" /> 
-  <SimpleCardVue :pokemon="currentPokemon"/>
-  <PokemonDescriptionVue :pokemon-specie="currentPokemonSpecie" />
-  <PokemonDetailsVue :pokemon="currentPokemon" :pokemon-specie="currentPokemonSpecie" />
-  <PokemonStatsVue :pokemon="currentPokemon"/>
-  <TypeDynamicsVue :types="types" />
+  <div class="pokemonDetailView">
+    <p> {{ $route.params.name}} - {{ param }} </p>
+    <ClassBadgeVue :pokemon-specie="currentPokemonSpecie" />
+    <EvolutionBadgeVue :pokemon="previousPokemon" /> 
+    <SimpleCardVue :pokemon="currentPokemon"/>
+    <PokemonDescriptionVue :pokemon-specie="currentPokemonSpecie" />
+    <PokemonDetailsVue :pokemon="currentPokemon" :pokemon-specie="currentPokemonSpecie" />
+    <PokemonStatsVue :pokemon="currentPokemon"/>
+    <TypeDynamicsVue :types="types" />
+  </div>
+  
 </template>
 
 <style scoped>
-
+.pokemonDetailView {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 </style>
