@@ -17,11 +17,22 @@ const backgroundColor = computed(() => {
   return getTypeColor(props.pokemon.types[0].type.name);
 });
 
+/** Build the cleanest URL to get to the desired details */
+const detailUrl = computed(() => {
+  let baseUrl = `/pokemon/${props.pokemon.species.name}`
+  if(props.pokemon.name != props.pokemon.species.name){
+    baseUrl += `/${props.pokemon.name}`
+  }
+
+  return baseUrl;
+});
+
 </script>
 
 <template>
   <article class="cardContainer card">
-    <router-link :to="`/pokemon/${pokemon.name}`" >
+  
+    <router-link :to="detailUrl" >
       <p class="cardId">{{`#${pokemon.id}`}}</p>
       <img
         class="cardSprite"
