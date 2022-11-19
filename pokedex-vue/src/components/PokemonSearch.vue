@@ -1,0 +1,74 @@
+<script setup>
+import { typeList, getTypeColor, pokedexInstance } from '../assets/js/utils'
+import { ref } from 'vue';
+
+const props = defineProps({
+  
+});
+
+const emitFunction = defineEmits([
+  'searchStart',  // No value are passed
+  'searchEnd'     // Value passed: List of pokemon names
+]);
+
+const interval = {
+  limit: 906
+}
+const pokemonList = await pokedexInstance.getPokemonsList(interval);
+
+/* Search typed by the user */
+const searchTerm = ref('');
+/**
+ * Build a list of all pokemon starting by a name
+ * @param {String} searchTerm The pokemon name typed by the user
+ * @return {Array<String>} The list of all pokemon
+ */
+function buildPokemonList(){
+  console.log('searchStart');
+  emitFunction('searchStart');
+
+  let lowercaseSearch = searchTerm.value.toLocaleLowerCase();
+  const names = [];
+  for(const pokemon of pokemonList.results){
+    if(pokemon.name.includes(lowercaseSearch)){
+      names.push(pokemon.name);
+    }
+  }
+  console.log('searchEnd', names );
+  emitFunction('searchEnd', names);
+}
+
+
+// Initial list is always all pokemons
+buildPokemonList();
+</script>
+
+<template>
+<div class="card pokemonSearch">
+  <div class="searchBar">
+    <form @submit.prevent="buildPokemonList">  
+      <label for="pokemon-search">Search across pokemons by name:</label>
+      <input v-model="searchTerm" id="pokemon-search" type="search" name="search-pokemon">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</div>
+</template>
+
+<style>
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem
+}
+
+.searchType {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+</style>

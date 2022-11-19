@@ -4,6 +4,17 @@ import { Pokedex } from "pokeapi-js-wrapper"
 export const pokedexInstance = new Pokedex({cacheImages: true});
 console.log(pokedexInstance)
 
+/**List of all pokemon types, maybe gather all the types from the API instead ? */
+export const typeList =  [
+  'bug', 'dark', 'dragon',
+ 'electric', 'fire', 'fairy', 
+ 'fighting', 'flying', 'ghost', 
+ 'grass', 'ground', 'ice', 
+ 'normal', 'poison', 'psychic', 
+ 'rock', 'steel', 'water'
+]
+
+
 /**
  * Get a color associated to a pokemon type
  * @param {String} type The pokemon type
