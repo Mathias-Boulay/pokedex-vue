@@ -1,5 +1,5 @@
 <script setup>
-import { getTypeColor } from '../assets/js/utils.js';
+import { getTypeColor } from '../assets/js/utils';
 
 const props = defineProps({
   typeNames: {

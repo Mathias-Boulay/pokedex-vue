@@ -2,7 +2,7 @@
 import { ref, computed, watch } from 'vue'
 import { useElementSize } from '@vueuse/core'
 
-import { pokedexInstance } from '../assets/js/utils.js'
+import { pokedexInstance } from '../assets/js/utils'
 import SimpleCardVue from './SimpleCard.vue';
 
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css' 

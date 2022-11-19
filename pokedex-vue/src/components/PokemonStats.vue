@@ -1,6 +1,6 @@
 <script setup>
 import StatBarVue from './StatBar.vue';
-import { getTypeColor } from '../assets/js/utils.js';
+import { getTypeColor } from '../assets/js/utils';
 
 const props = defineProps({
   pokemon: Object

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-import { getTypeColor } from "../assets/js/utils.js";
+import { getTypeColor } from "../assets/js/utils";
 import TypeIconListVue from "./TypeIconList.vue";
 
 
