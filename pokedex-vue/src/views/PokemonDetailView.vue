@@ -106,6 +106,7 @@ async function updatePokemon(pokemonName){
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   gap: 2rem ;
 }
 </style>
