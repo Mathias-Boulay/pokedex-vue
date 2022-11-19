@@ -40,7 +40,9 @@ function findNextDescriptionIndex(direction){
  * @return {String} The same description with a few adjustements 
  */
 function processDescription(description){
-  return description.replaceAll('\n', ' ');
+  return description
+      .replaceAll('\n', ' ')
+      .replaceAll('\u000c', ' ');
 }
 </script>
 
