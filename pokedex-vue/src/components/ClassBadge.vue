@@ -9,9 +9,9 @@ const props = defineProps({
 
 <template>
   <div class="badge pokemonClass">
-    <p class="legendaryPokemon" v-if="pokemonSpecie.is_mythical">Legendary Pokemon</p>
-    <p class="mythicalPokemon" v-if="pokemonSpecie.is_legendary">Mythical Pokemon</p>
-    <p class="babyPokemon" v-if="pokemonSpecie.is_mythical">Baby Pokemon</p>
+    <p class="legendaryPokemon" v-if="pokemonSpecie.is_legendary">Legendary Pokemon</p>
+    <p class="mythicalPokemon" v-else-if="pokemonSpecie.is_mythical">Mythical Pokemon</p>
+    <p class="babyPokemon" v-else-if="pokemonSpecie.is_baby">Baby Pokemon</p>
     <p class="normalPokemon" v-else>Normal Pokemon</p>
   </div>
 </template>
