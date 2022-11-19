@@ -36,7 +36,7 @@ function getTypeNames(arrayName){
 </script>
 
 <template>
-  <div class="card typeDynamics">
+  <div class="card fullWidthCard typeDynamics">
   <!-- TODO merge in one v-for directive ? -->
     <div v-if="displayedWeaknesses.length">
       <h3>Weaknesses:</h3>

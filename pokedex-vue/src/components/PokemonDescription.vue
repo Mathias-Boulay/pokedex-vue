@@ -45,7 +45,7 @@ function processDescription(description){
 </script>
 
 <template>
-  <div class="card pokemonDescription" >
+  <div class="card fullWidthCard pokemonDescription" >
     <button class="borderlessButton" v-on:click="findNextDescriptionIndex(-1)">&lsaquo;</button>
     <p> {{ processDescription(pokemonSpecie['flavor_text_entries'][currentDescriptionIndex]['flavor_text']) }}</p>
     <button class="borderlessButton" v-on:click="findNextDescriptionIndex(1)">&rsaquo;</button>
@@ -61,17 +61,16 @@ p {
 }
 
 .pokemonDescription {
-  width: fit-content;
-  
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-around;
 }
 
 .borderlessButton{
   border: none;
-  width: 10%;
+  width: 15%;
   height: 100%;
   transition: 1s;
   background-color: transparent;

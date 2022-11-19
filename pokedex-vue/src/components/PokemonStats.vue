@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card pokemonStats">
+  <div class="card fullWidthCard pokemonStats">
     <StatBarVue
     v-for="stat in pokemon.stats"
     :label="stat['stat']['name']"
