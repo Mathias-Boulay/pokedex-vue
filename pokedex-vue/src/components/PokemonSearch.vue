@@ -27,6 +27,29 @@ function buildPokemonList(){
   console.log('searchStart');
   emitFunction('searchStart');
 
+  // Fast pass for the initial array loading
+  if(searchTerm.value.length == 0){
+    const names = new Array(pokemonList.length);
+    for(let i = 0; i < pokemonList.results.length; ++i){
+      names[i] = pokemonList.results[i].name;
+    }
+    emitFunction('searchEnd', names);
+    return;
+  }
+
+  // Fast pass for id lookup
+  let parsedValue = parseInt(searchTerm.value)
+  if(!Number.isNaN(parsedValue)){
+    if(parsedValue <= 0 || parsedValue >= pokemonList.length){
+      emitFunction('searchEnd', []);
+      return
+    }
+
+    emitFunction('searchEnd', [pokemonList.results[parsedValue - 1].name]);
+    return;
+  }
+
+  // Normal search, slower
   let lowercaseSearch = searchTerm.value.toLocaleLowerCase();
   const names = [];
   for(const pokemon of pokemonList.results){
