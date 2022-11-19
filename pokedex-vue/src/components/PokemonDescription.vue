@@ -8,8 +8,8 @@ const props = defineProps({
   }
 });
 
-const currentDescriptionIndex = ref(0);
 
+const currentDescriptionIndex = ref(0);
 /** Update the description index to the next english entry. Loops if needed 
  * @param {Integer} direction The direction to loop the array over
  */
@@ -47,9 +47,11 @@ function processDescription(description){
 <template>
   <section class="card fullWidthCard pokemonDescription" >
     <h3>Descriptions</h3>
-    <button class="borderlessButton" v-on:click="findNextDescriptionIndex(-1)">&lsaquo;</button>
-    <p> {{ processDescription(pokemonSpecie['flavor_text_entries'][currentDescriptionIndex]['flavor_text']) }}</p>
-    <button class="borderlessButton" v-on:click="findNextDescriptionIndex(1)">&rsaquo;</button>
+    <div class="description">
+      <button class="borderlessButton" v-on:click="findNextDescriptionIndex(-1)">&lsaquo;</button>
+      <p> {{ processDescription(pokemonSpecie['flavor_text_entries'][currentDescriptionIndex]['flavor_text']) }}</p>
+      <button class="borderlessButton" v-on:click="findNextDescriptionIndex(1)">&rsaquo;</button>
+    </div>
   </section>
 </template>
 
@@ -61,7 +63,15 @@ p {
   max-width: 40rem;
 }
 
-.pokemonDescription {
+pokemonDescription{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap   ;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.description {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

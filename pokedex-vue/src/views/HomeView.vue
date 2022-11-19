@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import SimpleCard from '../components/SimpleCard.vue';
 import CartList from '../components/CardList.vue';
 import pokemonSearch from '../components/PokemonSearch.vue';
 
@@ -17,7 +16,7 @@ function updatePokemon(pokemons){
 </script>
 
 <template>
-  <p>Hello world</p>
+  <h1>Pokemon List</h1>
   <!--  <SimpleCard :pokemon="ditto"/> -->
   <pokemonSearch
   @search-end="updatePokemon"

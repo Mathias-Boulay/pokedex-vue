@@ -56,19 +56,20 @@ buildPokemonList();
 </template>
 
 <style>
-.searchBar {
+
+.pokemonSearch {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1.1rem;
+}
+
+form {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem
 }
 
-.searchType {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-evenly;
-}
 
 </style>

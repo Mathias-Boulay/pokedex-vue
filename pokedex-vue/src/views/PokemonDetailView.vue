@@ -29,6 +29,7 @@ watch(() => route.params.name, async (newName) => {
   await updatePokemon(newName);
 });
 
+/** Query details for [pokemonName] ans its previous evolution, if applicable */
 async function updatePokemon(pokemonName){
   currentPokemon.value = await pokedexInstance.getPokemonByName(pokemonName);
   currentPokemonSpecie.value = await pokedexInstance.getPokemonSpeciesByName(pokemonName);
@@ -45,9 +46,13 @@ async function updatePokemon(pokemonName){
 
 <template>
   <div class="pokemonDetailView">
-    <p> {{ $route.params.name}} </p>
-    <ClassBadgeVue :pokemon-specie="currentPokemonSpecie" />
-    <EvolutionBadgeVue :pokemon="previousPokemon" /> 
+    <h1> Pokemon - {{ route.params.name }} </h1>
+    
+    <div class="badgeContainer">
+      <ClassBadgeVue :pokemon-specie="currentPokemonSpecie" />
+      <EvolutionBadgeVue :pokemon="previousPokemon" /> 
+    </div>
+    
     <SimpleCardVue :pokemon="currentPokemon"/>
     <PokemonDescriptionVue :pokemon-specie="currentPokemonSpecie" />
     <PokemonDetailsVue :pokemon="currentPokemon" :pokemon-specie="currentPokemonSpecie" />
@@ -63,5 +68,12 @@ async function updatePokemon(pokemonName){
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
+}
+
+.badgeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem ;
 }
 </style>

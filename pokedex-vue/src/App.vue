@@ -14,16 +14,16 @@ import { RouterView } from "vue-router";
     
   </header>
 
-  <div id="main">
+  <main>
     <!-- Not the best use of such tag,
     but most components rely of the same data fetched by the view -->
     <Suspense>  
       <RouterView />
     </Suspense>
-  </div>
+  </main>
 
   <footer>
-    <p>Made with hate by Mathias Boulay</p>
+    <p>Pokémon and Pokémon character names are trademarks of Nintendo.</p>
   </footer>
 </template>
 
@@ -32,12 +32,12 @@ import { RouterView } from "vue-router";
 <style scoped>
 header {
   height: min-content;
-  padding: 0 50px;
-  background-color: red;
+  padding: 0 0.3rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+
 
 .logo {
   width: 100%;
@@ -46,6 +46,10 @@ header {
 footer {
   height: min-content;
   padding: 1% 0;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
+}
+
+p {
+  text-align: center;
 }
 </style>

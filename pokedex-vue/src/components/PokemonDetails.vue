@@ -15,9 +15,9 @@ const props = defineProps({
   <section class="card fullWidthCard pokemonDetails">
     <h3>Details</h3>
     <div class="detailContainer">
-      <p>Height: <span>{{ pokemon.height * 10 }} cm</span></p>
-      <p>Weigth: <span> {{ pokemon.weight * 10 }} g</span></p>
-      <p>Gender:
+      <p>Height: <br/> <span>{{ pokemon.height * 10 }} cm</span></p>
+      <p>Weigth: <br/> <span> {{ pokemon.weight * 10 }} g</span></p>
+      <p>Gender: <br/>
         <span v-if="pokemonSpecie.gender_rate === -1">Unknown</span>
         <span v-else-if="pokemonSpecie.gender_rate === 0">Male</span>
         <span v-else-if="pokemonSpecie.gender_rate === 8">Female</span>
@@ -34,6 +34,10 @@ const props = defineProps({
 </template>
 
 <style scoped>
+
+p {
+  text-align: center;
+}
 
 .pokemonDetails {
   display: flex;
