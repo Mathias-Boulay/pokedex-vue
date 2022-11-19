@@ -20,16 +20,18 @@ const backgroundColor = computed(() => {
 </script>
 
 <template>
-  <router-link :to="`/pokemon/${pokemon.name}`" class="cardContainer card">
-    <p class="cardId">{{`#${pokemon.id}`}}</p>
-    <img
-      class="cardSprite"
-      alt="A pokemon sprite"
-      :src="pokemon.sprites.front_default"
-    />
-    <p class="cardName">{{ pokemon.name }}</p>
-    <TypeIconListVue :type-names="typeNames" />
-  </router-link>
+  <article class="cardContainer card">
+    <router-link :to="`/pokemon/${pokemon.name}`" >
+      <p class="cardId">{{`#${pokemon.id}`}}</p>
+      <img
+        class="cardSprite"
+        :alt="`${pokemon.name} sprite`"
+        :src="pokemon.sprites.front_default"
+      />
+      <p class="cardName">{{ pokemon.name }}</p>
+      <TypeIconListVue :type-names="typeNames" />
+    </router-link>
+  </article>
 </template>
 
 

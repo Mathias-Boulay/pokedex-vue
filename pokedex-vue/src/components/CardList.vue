@@ -25,7 +25,7 @@ watch(() => props.pokemonsNames, async () => {
   await handleNewPokemons();
 });
 
-// Handle resizing the component
+// Handle resizing the RecyclerView
 const rootElement = ref(null);
 const { width, height } = useElementSize(rootElement);
 

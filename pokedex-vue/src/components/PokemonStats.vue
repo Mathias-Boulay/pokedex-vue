@@ -9,7 +9,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card fullWidthCard pokemonStats">
+  <section class="card fullWidthCard pokemonStats">
+    <h3>Statistics</h3>
     <StatBarVue
     v-for="stat in pokemon.stats"
     :label="stat['stat']['name']"
@@ -17,7 +18,7 @@ const props = defineProps({
     :max="255"
     :color="getTypeColor(pokemon.types[0].type.name)"
     />
-  </div>
+  </section>
 </template>
 
 <style scoped>

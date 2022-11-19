@@ -45,11 +45,12 @@ function processDescription(description){
 </script>
 
 <template>
-  <div class="card fullWidthCard pokemonDescription" >
+  <section class="card fullWidthCard pokemonDescription" >
+    <h3>Descriptions</h3>
     <button class="borderlessButton" v-on:click="findNextDescriptionIndex(-1)">&lsaquo;</button>
     <p> {{ processDescription(pokemonSpecie['flavor_text_entries'][currentDescriptionIndex]['flavor_text']) }}</p>
     <button class="borderlessButton" v-on:click="findNextDescriptionIndex(1)">&rsaquo;</button>
-  </div>
+  </section>
 </template>
 
 <style scoped>

@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="card fullWidthCard pokemonDetails">
+  <section class="card fullWidthCard pokemonDetails">
     <h3>Details</h3>
     <div class="detailContainer">
       <p>Height: <span>{{ pokemon.height * 10 }} cm</span></p>
@@ -30,7 +30,7 @@ const props = defineProps({
         </ul>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
